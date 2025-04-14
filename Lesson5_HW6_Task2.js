@@ -17,7 +17,6 @@ function pow (x, y) {
     }
     return result;
 }
-let x = 2;
-let y = 4;
-let res = pow (x, y);
-console.log (x + " в ступені " + y + " дорівнює " + result);
+let res = pow (2,4);
+console.log ("Результат обчислення дорівнює " + res);
+//console.log (x + " в ступені " + y + " дорівнює " + res);
