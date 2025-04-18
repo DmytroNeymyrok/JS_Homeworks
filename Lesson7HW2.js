@@ -29,9 +29,9 @@ services['Розбити скло'] = "200 грн";
 
 
 var services = {
-    "Стрижка": "60 грн",  
+    "Стрижка": "90 грн",  
     "Гоління": "80 грн",    
-    "Миття голови": "100 грн",
+    "Миття голови": "110 грн",
     price : function() {                  //Метод для розрахунку загальної вартості послуг
         let totalPrice = 0;               //Вводиться змінна для підрахунку загальної вартості
         for (let key in this) {
@@ -60,25 +60,26 @@ var services = {
             if (typeof this[key] === "string") {
                 let currentPrice = Number.parseInt (this[key]);
                 if (currentPrice > maximalPrice) {
-                    maximalPrice = currentPrice
+                    maximalPrice = currentPrice;
                 }
             }
         }
         return maximalPrice;                              
         }
 }
-let total = services.price();
-console.log ("Загальна вартість послуг: " + total + " грн.");         //По черзі виводимо дані з початкового прайсу
+let total = services.price();     
+console.log (`Загальна вартість послуг: ${total} грн.`);             //По черзі виводимо дані з початкового прайсу
 let minimalPrice = services.minPrice();
-console.log ("Мінімальна ціна послуги: " + minimalPrice + " грн.");
+console.log(`Мінімальна ціна послуги: ${minimalPrice} грн.`);
 let maximalPrice = services.maxPrice();
-console.log ("Максимальна ціна послуги: " + maximalPrice + " грн.");
+console.log (`Максимальна ціна послуги: ${maximalPrice} грн.`);
 
-services["Фарбування волосся"] = "1500 грн"                          //Додавання нової властивості
+services["Фарбування волосся"] = "1500 грн";                          //Додавання нової властивості
 
-total = services.price();
-console.log ("\nЗагальна вартість послуг: " + total + " грн.");         //По черзі виводимо дані з модифікованого прайсу
+total = services.price();      
+console.log ("\nПісля внесення змін");                            //По черзі виводимо дані з модифікованого прайсу
+console.log (`Загальна вартість послуг: ${total} грн.`);
 minimalPrice = services.minPrice();
-console.log ("Мінімальна ціна послуги: " + minimalPrice + " грн.");
+console.log (`Мінімальна ціна послуги: ${minimalPrice} грн.`);
 maximalPrice = services.maxPrice();
-console.log ("Максимальна ціна послуги: " + maximalPrice + " грн.");
+console.log (`Максимальна ціна послуги: ${maximalPrice} грн.`);

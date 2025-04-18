@@ -22,24 +22,27 @@ obj.getInfo(); // Виводить всі властивості, включаю
 
 //First version
 
-/* let clientInformation = {
+let clientInformation = {
     nickname: "Tor",
     age: 24,
     city: "Kyiv",
     getInfo: function() {
         for (let key in this) {
+        if (typeof this[key] != "function") {
         console.log (key + ": " + this[key]);
+        }
+       
         }
     }
 }
 console.log ("Об'єкт з базовими властивостями:");
 clientInformation.getInfo();
-clientInformation.discount = 5;//Додаю нову властивість для об'єкта clientInformation
+clientInformation.discount = 6;//Додаю нову властивість для об'єкта clientInformation
 console.log ("\nОб'єкт після додавання нової властивості:");
-clientInformation.getInfo(); */
+clientInformation.getInfo();
 
-// Second version
-let clientInformation = {
+// Second version (працює, але трохи не відповідає умові)
+/* let clientInformation = {
     nickname: "Tor",
     age: 24,
     city: "Kyiv"
@@ -53,4 +56,4 @@ console.log ("Об'єкт з базовими властивостями:");
 getInfo(clientInformation);
 clientInformation.discount = 5;//Додаю нову властивість для об'єкта clientInformation
 console.log ("\nОб'єкт після додавання нової властивості:");
-getInfo(clientInformation); 
+getInfo(clientInformation);  */
