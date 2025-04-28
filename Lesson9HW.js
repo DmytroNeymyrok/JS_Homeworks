@@ -33,7 +33,7 @@ var arr = [
 Додайте туди ваше домашнє завдання
 Вишліть посилання на вашу гілку     */
 
-var arr = [
+const arr = [
     {
         userName:"Test",
         lastName:"Test",
@@ -48,13 +48,13 @@ var arr = [
         userName:"Andrii",
         lastName:"",
         email:"andrii@mail.ru" // Нам такі не підходять
-    },
+    }
 ];
 
 let rightEmailArray = arr
   .filter(function(item) {                // фільтрує масив, обираючи email, які відповідають умові регулярного виразу
     let email = item.email;
-    let condition = /^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)?@(gmail|yahoo)\.com$/;
+    let condition = /^[a-zA-Z0-9][a-zA-Z0-9._%+-]{0,19}@(gmail|yahoo)\.com$/;
     return condition.test(email);
   })
   .map(function(item) {                   // створює новий масив, не трансформуючи вихідний
